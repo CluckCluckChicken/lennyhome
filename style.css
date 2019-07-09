@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Gugi');
+@import url('https://fonts.googleapis.com/css');
 
 
 #face {
@@ -9,7 +9,7 @@
 }
 
 footer {
-  font-family: "gugi", cursive;
+  font-family: "Didact Gothic", cursive;
   text-align: center;
 }
 
