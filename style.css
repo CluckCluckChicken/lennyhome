@@ -5,6 +5,11 @@
   padding: 10px 32px;
   color: #ecf0f1;
   background-color: transparent;
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 nav {
