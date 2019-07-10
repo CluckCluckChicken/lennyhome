@@ -67,6 +67,14 @@ nav {
 
 #face {
   font-family: "Dosis";
+  font-size: 5vw;
+  margin-top: 5%;
+  text-align: center;
+  color: #ecf0f1;
+}
+
+h1 {
+  font-family: "Dosis";
   font-size: 15vw;
   margin-top: 5%;
   text-align: center;
