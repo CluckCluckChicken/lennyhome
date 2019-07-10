@@ -70,10 +70,20 @@ nav {
   to {bottom: 0; opacity: 0;}
 }
 
-#face {
+h1 {
   font-family: "Gotham Bold";
   font-size: 10vw;
   margin-top: 5%;
+  margin-bottom: 5vw;
+  text-align: center;
+  color: #ecf0f1;
+}
+
+#face {
+  font-family: "Gotham Bold";
+  font-size: 5vw;
+  margin-top: 5%;
+  margin-bottom: 5vw;
   text-align: center;
   color: #ecf0f1;
 }
