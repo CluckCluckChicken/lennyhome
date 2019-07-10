@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css');
 
+@font-face {
+  font-family: "Gotham Bold";
+  src: url("GOTHAM-BOLD.OTF");
+}
+
 .NavButton {
   border: none;
   padding: 16px;
