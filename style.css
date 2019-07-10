@@ -75,10 +75,11 @@ nav {
 
 h1 {
   font-family: "Dosis";
-  font-size: 15vw;
+  font-size: 10vw;
   margin-top: 5%;
   text-align: center;
   color: #ecf0f1;
+  font-weight: none;
 }
 
 footer {
