@@ -67,7 +67,7 @@ nav {
 
 #face {
   font-family: "Dosis";
-  font-size: 30pt;
+  font-size: 10vw;
   margin-top: 5%;
   text-align: center;
   color: #ecf0f1;
@@ -97,6 +97,6 @@ footer {
 
 @media only screen and (min-width: 739px) {
   #face {
-    font-size: 111.44999694824219px;
+    font-size: 10vw;
   }
 }
