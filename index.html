@@ -20,13 +20,26 @@
     <footer>
       
     <p>&copy; Telepathic Squid Productions 2018-2019</p>
-    
+    <div id="snackbar">Some text some message..</div>
     </footer>
     <script>
+      ShowSnack();
+      
       var lennyFaces = ["( ͡° ͜ʖ ͡°)", "¯\_(ツ)_/¯", "̿̿ ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿", "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)", "ʕ•ᴥ•ʔ", "┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴", "( ͡°╭͜ʖ╮͡° )", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]"];
       var number =  Math.floor((Math.random() * lennyFaces.length) + 0);
       var face = document.getElementById("face");
       face.textContent = lennyFaces[number]
+      
+      function ShowSnack() {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+      }
     </script>
   </body>
 </html>
