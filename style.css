@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css');
 
+nav {
+  background-color: #ECF0F1;
+}
+
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
   visibility: hidden; /* Hidden by default. Visible on click */
