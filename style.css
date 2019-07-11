@@ -72,18 +72,14 @@ nav {
 
 h1 {
   font-family: "Gotham Bold";
-  font-size: 5vw;
-  margin-top: 5%;
-  margin-bottom: 5vw;
+  font-size: 7vw;
   text-align: center;
   color: #ecf0f1;
 }
 
 #face {
   font-family: "Gotham Bold";
-  font-size: 5vw;
-  margin-top: 5%;
-  margin-bottom: 5vw;
+  font-size: 7vw;
   text-align: center;
   color: #ecf0f1;
 }
@@ -112,6 +108,6 @@ footer {
 
 @media only screen and (min-width: 739px) {
   #face {
-    font-size: 5vw;
+    font-size: 7vw;
   }
 }
