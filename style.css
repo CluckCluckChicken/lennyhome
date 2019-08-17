@@ -5,6 +5,11 @@
   src: url("GOTHAM-BOLD.OTF");
 }
 
+@font-face {
+  font-family: "Didact Gothic";
+  src: url("/fonts/DidactGothic-Regular.ttf");
+}
+
 .modal1 {
   top: 35%;
   left: 35%;
