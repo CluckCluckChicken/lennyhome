@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LennyHome</title>
+    <link rel="stylesheet" href="/ripple.less">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143669002-2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-143669002-2');
+      </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  </head>
+  
+  <body style="background-image: url('/blobs1.svg'); margin: 0px 0px 0px 0px;">
+    <div class="topnav" id="myTopnav">
+      <a href="/" class="active">Search</a>
+      <a href="https://is.gd/tespa">Home</a>
+      <a href="https://github.com/TelepathicSquidProductions">GitHub</a>
+      <a href="https://is.gd/tspgames">Games</a>
+      <a style="float: right;" href="https://tespa.netlify.com/account/"><i class="material-icons">account_circle</i></a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <h1 id="face">Search</h1>
+    <form method="get" action="https://www.ecosia.org/search">
+      <div id="inputs">
+      <input type="text"   name="q" size="31"
+             maxlength="255" value="" />
+      <input type="submit" class="ripple" value="Search" id="search-button"/>
+      </div>
+    </form>
+
+    <footer>
+      
+      <p>&copy; Telepathic Squid Productions 2018-2019</p>
+      <p>This site uses Google Analytics to collect anonymous usage statistics</p>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome" data-size="large" aria-label="Star CluckCluckChicken/lennyhome on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/cluckcluckchicken/lennyhome/subscription" data-size="large" aria-label="Watch cluckcluckchicken/lennyhome on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken" data-size="large" aria-label="Follow @CluckCluckChicken on GitHub">Follow @CluckCluckChicken</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome/fork" data-size="large" aria-label="Fork CluckCluckChicken/lennyhome on GitHub">Fork</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome/issues" data-size="large" aria-label="Issue CluckCluckChicken/lennyhome on GitHub">Report a bug</a>
+      <div id="snackbar">Get LennyHome as your browser home page!<button>Yes</button></div>
+    </footer>
+    <script>
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      ShowSnack();
+      
+      var lennyFaces = ["( ͡° ͜ʖ ͡°)", "¯\_(ツ)_/¯", "̿̿ ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿", "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)", "ʕ•ᴥ•ʔ", "┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴", "( ͡°╭͜ʖ╮͡° )", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]"];
+      var number =  Math.floor((Math.random() * lennyFaces.length) + 0);
+      var face = document.getElementById("face");
+      face.textContent = lennyFaces[number]
+      
+      function ShowSnack() {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+      }
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+      <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAN4nLKenddvEzcSZYhaJ-s19Irv9PEdyA",
+        authDomain: "telepathic-squid-000.firebaseapp.com",
+        databaseURL: "https://telepathic-squid-000.firebaseio.com",
+        projectId: "telepathic-squid-000",
+        storageBucket: "telepathic-squid-000.appspot.com",
+        messagingSenderId: "216289155289",
+        appId: "1:216289155289:web:c4d915b3c17c08a5"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </body>
+</html>
