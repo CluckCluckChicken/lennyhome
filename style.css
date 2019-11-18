@@ -11,7 +11,7 @@
 }
 
 .servicesList {
-  align-items: center;
+  padding: 64px;
 }
 
 .servicesListButton {
