@@ -108,7 +108,31 @@
       
       firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        // User is signed in.
+        var user = firebase.auth().currentUser;
+        var name, email, photoUrl, uid;
+
+        if (user != null) {
+          name = user.displayName;
+          email = user.email;
+          photoUrl = user.photoURL;
+          uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                           // this value to authenticate with your backend server, if
+                           // you have one. Use User.getToken() instead.
+        }
+        
+        var docRef = db.collection("users").doc(uid);
+
+        docRef.get().then(function(doc) {
+            if (doc.exists) {
+                console.log("Account has already been initiated. Good.");
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("Account needs initiating. Doing so now.");
+                db.collection("users").doc(uid).set(data);
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
       } else {
         window.location = "./index.html";
       }
