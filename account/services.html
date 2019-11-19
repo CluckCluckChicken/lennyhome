@@ -103,6 +103,14 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
+      
+      firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+      } else {
+        window.location = "./index.html";
+      }
+});
     </script>
   </body>
 </html>
