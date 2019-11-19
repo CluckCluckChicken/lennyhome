@@ -95,11 +95,10 @@
         var errorMessage = error.message;
       });
       
-      var user = firebase.auth().currentUser;
-
-      if (user) {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
           window.location = "./services.html";
-      } else {
+        } else {
           // Initialize the FirebaseUI Widget using Firebase.
           var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
@@ -133,7 +132,8 @@
         };
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
-      }
+        }
+      });
 
     </script>
   </body>
