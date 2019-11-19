@@ -126,7 +126,7 @@
         
         console.log("Creating reference for servers list document...");
         
-        var serversRef = db.collection("users").doc(uid).collection("mc-server-feed").doc("servers");
+        var serversRef = db.collection("users").doc(uid); // .collection("mc-server-feed").doc("servers")
         
         console.log("Done.");
         
