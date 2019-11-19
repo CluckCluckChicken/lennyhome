@@ -121,32 +121,19 @@
         console.log("You are logged in as: " + name + ". To change your username, type the following into the console:");
         console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
         console.log("Ignore him. He's grumpy.");
+
+        // Get list of servers
         
-        // Read servers list from database
+        console.log("Fetching servers list...");
         
-        console.log("Creating reference for servers list document...");
-        
-        var serversRef = db.collection("users").doc(uid); // .collection("mc-server-feed").doc("servers")
-        
-        console.log("Done.");
-        
-        console.log("Attempting to fetch document data...");
-        
-        serversRef.get().then(function(doc) {
-            if (doc.exists) {
-                console.log("Success!");
-                console.log("Servers document data:", doc.data());
-                console.log("Type the following to load a feed:");
-                console.log("LoadFeed([Insert server name here]);");
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("Servers document does not exist, mc-server-feed is not set up! Type the following into the console to activate it:");
-                console.log("TODO: Add this!");
-            }
-        }).catch(function(error) {
-            console.log("Error fetching servers document data:", error);
-            console.log("Hit F5 to try again.");
+        db.collection("/users/" + uid + "/mc-server-feed").get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(You have the following servers:);
+                console.log(doc.id, " => ", doc.data());
+            });
         });
+        
         
         
         
