@@ -132,7 +132,7 @@
         
         console.log("Attempting to fetch document data...");
         
-        docRef.get().then(function(doc) {
+        serversRef.get().then(function(doc) {
             if (doc.exists) {
                 console.log("Success!");
                 console.log("Servers document data:", doc.data());
