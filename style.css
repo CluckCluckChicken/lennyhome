@@ -18,6 +18,10 @@
   
 }
 
+.MCServerFeedItemsList {
+    padding: 64px;
+}
+
 .modal1 {
   top: 35%;
   left: 35%;
