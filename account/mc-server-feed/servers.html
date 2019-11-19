@@ -113,6 +113,13 @@
                            // this value to authenticate with your backend server, if
                            // you have one. Use User.getToken() instead.
         }
+        user.updateProfile({
+        displayName: "CluckCluckChicken",
+      }).then(function() {
+        // Update successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
         
         console.log("You are logged in as: " + name);
         
