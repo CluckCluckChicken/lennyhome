@@ -115,7 +115,7 @@
         }
         
         console.log("You are logged in as: " + name + ". To change your username, type the following into the console:");
-        console.log("user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
+        console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
         console.log("Ignore him. He's grumpy.");
         
       } else {
