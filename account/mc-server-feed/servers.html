@@ -129,7 +129,7 @@
         db.collection("/users/" + uid + "/mc-server-feed").get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
-                console.log(You have the following servers:);
+                console.log("You have the following servers:");
                 console.log(doc.id, " => ", doc.data());
             });
         });
