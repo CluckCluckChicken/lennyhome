@@ -131,10 +131,7 @@
             } else {
                 // doc.data() will be undefined in this case
                 console.log("Account needs initiating. Doing so now.");
-                db.collection("cities").doc("LA").set({
-                    name: "Los Angeles",
-                    state: "CA",
-                    country: "USA"
+                db.collection("users").doc(uid).set({
                 })
                 .then(function() {
                     console.log("User base document created!");
