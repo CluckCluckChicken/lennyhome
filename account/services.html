@@ -123,9 +123,9 @@
                            // you have one. Use User.getToken() instead.
         }
         
-        var docRef = db.collection("users").doc(uid);
+        var userBaseDocumentRef = db.collection("users").doc(uid);
 
-        docRef.get().then(function(doc) {
+        userBaseDocumentRef.get().then(function(doc) {
             if (doc.exists) {
                 console.log("Account has already been initiated. Good.");
             } else {
@@ -145,6 +145,7 @@
             }
         }).catch(function(error) {
             console.log("Error getting user base document:", error);
+            console.log("Hit F5 to retry.");
         });
       } else {
         window.location = "./index.html";
