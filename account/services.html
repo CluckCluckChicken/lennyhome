@@ -131,7 +131,18 @@
             } else {
                 // doc.data() will be undefined in this case
                 console.log("Account needs initiating. Doing so now.");
-                db.collection("users").doc(uid).set(uid);
+                db.collection("cities").doc("LA").set({
+                    name: "Los Angeles",
+                    state: "CA",
+                    country: "USA"
+                })
+                .then(function() {
+                    console.log("User base document created!");
+                })
+                .catch(function(error) {
+                    console.error("Error writing user base document: ", error);
+                    console.log("Hit F5 to retry.");
+                });
             }
         }).catch(function(error) {
             console.log("Error getting document:", error);
