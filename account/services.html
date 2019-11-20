@@ -135,6 +135,8 @@
                 })
                 .then(function() {
                     console.log("User base document created!");
+                    console.log("Open any service to start using it by typing one of the following (don't type the square brackets):")
+                    console.log("<window.location = '/services/mc-server-feed/init.html'> for Server Feed for Minecraft")
                 })
                 .catch(function(error) {
                     console.error("Error writing user base document: ", error);
