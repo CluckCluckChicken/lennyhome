@@ -131,7 +131,7 @@
             } else {
                 // doc.data() will be undefined in this case
                 console.log("Account needs initiating. Doing so now.");
-                db.collection("users").doc(uid);
+                db.collection("users").doc(uid).set(uid);
             }
         }).catch(function(error) {
             console.log("Error getting document:", error);
