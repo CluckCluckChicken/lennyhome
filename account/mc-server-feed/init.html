@@ -126,7 +126,7 @@
         
         feedBaseDocumentRef.get().then(function(doc) {
             if (doc.exists) {
-
+              window.location = "./home.html";
             } else {
                 // doc.data() will be undefined in this case
                 console.log("mc-server-feed needs initiating. Doing so now.");
