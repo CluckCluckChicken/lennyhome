@@ -143,7 +143,7 @@
                         // doc.data() is never undefined for query doc snapshots
                         console.log("You have the following servers:");
                         console.log(doc.id);
-                        document.getElementById("serversList").innerHTML += "<button class='block w3-btn w3-dark-grey w3-round-large'>" + doc.id + "</button>";
+                        document.getElementById("serversList").innerHTML += "<button class='block w3-btn w3-dark-grey w3-round-large'>" + doc.id + "</button><input class='w3-input' type='text'><button class='w3-btn w3-dark-grey w3-round-large'>New server</button>";
                     });
                 })
                 .catch(function(error) {
