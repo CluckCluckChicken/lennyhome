@@ -125,21 +125,32 @@
         console.log("Ignore him. He's grumpy.");
 
         var feedBaseDocumentRef = db.collection("users").doc(uid).collection("mc-server-feed").doc("%base");
+        var mcServerFeedRef = db.collection("/users/" + uid + "/mc-server-feed");
         
-        feedBaseDocumentRef.get().then(function(doc) {
+        mcServerFeedRef.get().then(function(doc) {
             if (doc.exists) {
+              
                 // Get list of servers
         
                 console.log("Fetching servers list...");
-
-                db.collection("/users/" + uid + "/mc-server-feed").get().then(function(querySnapshot) {
+                
+                // Create query to only show servers
+                var isServerQuery = mcServerFeedRef.where("isServer", "==", true);
+                
+                isServerQuery.get()
+                .then(function(querySnapshot) {
                     querySnapshot.forEach(function(doc) {
                         // doc.data() is never undefined for query doc snapshots
                         console.log("You have the following servers:");
                         console.log(doc.id);
                         document.getElementById("serversList").innerHTML += "<button class='block w3-btn w3-dark-grey w3-round-large'>" + doc.id + "</button>";
                     });
+                })
+                .catch(function(error) {
+                    console.log("Error fetching servers: ", error);
+                    console.log("Hit F5 to retry.");
                 });
+              
             } else {
               window.location = "./init.html";
             }
