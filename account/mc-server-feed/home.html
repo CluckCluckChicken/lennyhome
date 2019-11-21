@@ -127,7 +127,7 @@
         var feedBaseDocumentRef = db.collection("users").doc(uid).collection("mc-server-feed").doc("%base");
         var mcServerFeedRef = db.collection("/users/" + uid + "/mc-server-feed");
         
-        mcServerFeedRef.get().then(function(doc) {
+        feedBaseDocumentRef.get().then(function(doc) {
             if (doc.exists) {
               
                 // Get list of servers
