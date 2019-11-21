@@ -49,8 +49,8 @@
       </a>
     </div>
 
-    <center class="mcServersList" id="serversList">
-      <h2 class="w3-white">You have the following servers:</h2>
+    <center class="mcServersList" id="serversList" class="w3-white">
+      <h2>You have the following servers:</h2>
     </center>
     
     <footer>
@@ -137,7 +137,7 @@
                         // doc.data() is never undefined for query doc snapshots
                         console.log("You have the following servers:");
                         console.log(doc.id);
-                        document.getElementById("serversList").innerHTML += "<button class='block'>" + doc.id + "</button>";
+                        document.getElementById("serversList").innerHTML += "<button class='block w3-btn w3-dark-grey w3-round-large'>" + doc.id + "</button>";
                     });
                 });
             } else {
