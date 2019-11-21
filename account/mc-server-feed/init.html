@@ -128,7 +128,7 @@
                 // doc.data() will be undefined in this case
                 console.log("mc-server-feed needs initiating. Doing so now.");
                 db.collection("users").doc(uid).collection("mc-server-feed").doc("%base").set({
-                  isServer: false;
+                  isServer: false,
                 })
                 .then(function() {
                     console.log("mc-server-feed base document '%base' created!");
