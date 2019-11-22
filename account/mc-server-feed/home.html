@@ -124,6 +124,34 @@
         console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
         console.log("Ignore him. He's grumpy.");
 
+        function CreateServer(string name) {
+          // Create new server feed
+          console.log("Attempting to test new feed presence...");
+          
+          var newServerDocRef = db.collection("users").doc(uid).collection("mc-server-feed").doc(name);
+        
+          feedBaseDocumentRef.get().then(function(doc) {
+              if (doc.exists) {
+                console.log("This feed already exists.");
+              } else {
+                  // doc.data() will be undefined in this case
+                  console.log("Presence test resulted false. Creating feed entries...");
+                  db.collection("users").doc(uid).collection("mc-server-feed").doc(name).set({
+                    isServer: true,
+                  })
+                  .then(function() {
+                      console.log("Server document created...");
+                  })
+                  .catch(function(error) {
+                      console.error("Error writing new feed document: ", error);
+                  });
+              }
+          }).catch(function(error) {
+              console.log("Error getting mc-server-feed base document:", error);
+              console.log("Hit F5 to retry.");
+          });
+        }
+        
         var feedBaseDocumentRef = db.collection("users").doc(uid).collection("mc-server-feed").doc("%base");
         var mcServerFeedRef = db.collection("/users/" + uid + "/mc-server-feed");
         
