@@ -35,89 +35,7 @@
       </script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <script>
-      function CreateServer(name) {
-          // Create new server feed
-          console.log("Attempting to test new feed presence...");
-          
-          if (user != null) {
-            name = user.displayName;
-            email = user.email;
-            photoUrl = user.photoURL;
-            uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                             // this value to authenticate with your backend server, if
-                             // you have one. Use User.getToken() instead.
-          }
-        
-          var newServerDocRef = db.collection("users").doc(uid).collection("mc-server-feed").doc(name);
-        
-          feedBaseDocumentRef.get().then(function(doc) {
-              if (doc.exists) {
-                console.log("This feed already exists.");
-              } else {
-                  // doc.data() will be undefined in this case
-                  console.log("Presence test resulted false. Creating feed entries...");
-                  db.collection("users").doc(uid).collection("mc-server-feed").doc(name).set({
-                    isServer: true,
-                  })
-                  .then(function() {
-                      console.log("Server document created...");
-                  })
-                  .catch(function(error) {
-                      console.error("Error writing new feed document: ", error);
-                  });
-              }
-          }).catch(function(error) {
-              console.log("Error getting mc-server-feed base document:", error);
-              console.log("Hit F5 to retry.");
-          });
-        }
-    </script>
-  </head>
-  
-  <body style="background-image: url('/blobs1.svg'); margin: 0px 0px 0px 0px;">
-    <div class="topnav" id="myTopnav">
-      <a href="/" class="active">Search</a>
-      <a href="https://is.gd/tespa">Home</a>
-      <a href="https://github.com/TelepathicSquidProductions">GitHub</a>
-      <a href="https://is.gd/tspgames">Games</a>
-      <a style="float: right;" href="https://tespa.netlify.com/account/"><i class="material-icons">account_circle</i></a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-
-    <center class="mcServersList" id="serversList">
-      <h2 class="black">You have the following servers:</h2>
-    </center>
-    
-    <footer>
-      
-      <p>&copy; Telepathic Squid Productions 2018-2019</p>
-      <p>This site uses Google Analytics to collect anonymous usage statistics</p>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome" data-size="large" aria-label="Star CluckCluckChicken/lennyhome on GitHub">Star</a>
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/cluckcluckchicken/lennyhome/subscription" data-size="large" aria-label="Watch cluckcluckchicken/lennyhome on GitHub">Watch</a>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/CluckCluckChicken" data-size="large" aria-label="Follow @CluckCluckChicken on GitHub">Follow @CluckCluckChicken</a>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome/fork" data-size="large" aria-label="Fork CluckCluckChicken/lennyhome on GitHub">Fork</a>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome/issues" data-size="large" aria-label="Issue CluckCluckChicken/lennyhome on GitHub">Report a bug</a>
-    </footer>
-    <script>
-      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-    </script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -154,6 +72,34 @@
           uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
                            // this value to authenticate with your backend server, if
                            // you have one. Use User.getToken() instead.
+        }
+        
+        function CreateServer(name) {
+          // Create new server feed
+          console.log("Attempting to test new feed presence...");
+                  
+          var newServerDocRef = db.collection("users").doc(uid).collection("mc-server-feed").doc(name);
+        
+          feedBaseDocumentRef.get().then(function(doc) {
+              if (doc.exists) {
+                console.log("This feed already exists.");
+              } else {
+                  // doc.data() will be undefined in this case
+                  console.log("Presence test resulted false. Creating feed entries...");
+                  db.collection("users").doc(uid).collection("mc-server-feed").doc(name).set({
+                    isServer: true,
+                  })
+                  .then(function() {
+                      console.log("Server document created...");
+                  })
+                  .catch(function(error) {
+                      console.error("Error writing new feed document: ", error);
+                  });
+              }
+          }).catch(function(error) {
+              console.log("Error getting mc-server-feed base document:", error);
+              console.log("Hit F5 to retry.");
+          });
         }
         
         // Change username options
@@ -229,6 +175,50 @@
         window.location = "../index.html";
       }
 });
+    </script>
+  </head>
+  
+  <body style="background-image: url('/blobs1.svg'); margin: 0px 0px 0px 0px;">
+    <div class="topnav" id="myTopnav">
+      <a href="/" class="active">Search</a>
+      <a href="https://is.gd/tespa">Home</a>
+      <a href="https://github.com/TelepathicSquidProductions">GitHub</a>
+      <a href="https://is.gd/tspgames">Games</a>
+      <a style="float: right;" href="https://tespa.netlify.com/account/"><i class="material-icons">account_circle</i></a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <center class="mcServersList" id="serversList">
+      <h2 class="black">You have the following servers:</h2>
+    </center>
+    
+    <footer>
+      
+      <p>&copy; Telepathic Squid Productions 2018-2019</p>
+      <p>This site uses Google Analytics to collect anonymous usage statistics</p>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome" data-size="large" aria-label="Star CluckCluckChicken/lennyhome on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/cluckcluckchicken/lennyhome/subscription" data-size="large" aria-label="Watch cluckcluckchicken/lennyhome on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken" data-size="large" aria-label="Follow @CluckCluckChicken on GitHub">Follow @CluckCluckChicken</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome/fork" data-size="large" aria-label="Fork CluckCluckChicken/lennyhome on GitHub">Fork</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/CluckCluckChicken/lennyhome/issues" data-size="large" aria-label="Issue CluckCluckChicken/lennyhome on GitHub">Report a bug</a>
+    </footer>
+    <script>
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
     </script>
   </body>
 </html>
