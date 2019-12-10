@@ -54,8 +54,9 @@ if (user) {
                   // doc.data() is never undefined for query doc snapshots
                   console.log("You have the following servers:");
                   console.log(doc.id);
-                  document.getElementById("serversList").innerHTML += "<button class='block w3-btn w3-dark-grey w3-round-large'>" + doc.id + "</button><input class='w3-input inline-block w3-round-large' id='newServerInput' style='width: 25%;' type='text'><button class='w3-btn w3-dark-grey w3-round-large inline-block' onclick='CreateFeed(document.getElementById(&#34newServerInput&#34).value)'>New server</button>";
+                  document.getElementById("serversList").innerHTML += "<button class='block w3-btn w3-dark-grey w3-round-large'>" + doc.id + "</button>";
               });
+              document.getElementById("serversList").innerHTML += "<input class='w3-input inline-block w3-round-large' id='newServerInput' style='width: 25%;' type='text'><button class='w3-btn w3-dark-grey w3-round-large inline-block' onclick='CreateFeed(document.getElementById(&#34newServerInput&#34).value)'>New server</button>";
           })
           .catch(function(error) {
               console.log("Error fetching servers: ", error);
