@@ -15,6 +15,8 @@ var db = firebase.firestore();
 
 firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
+  
+  console.log("ello");
   var user = firebase.auth().currentUser;
   var name, email, photoUrl, uid;
 
