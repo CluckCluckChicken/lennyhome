@@ -74,6 +74,20 @@ if (user) {
 });
 
 function CreateFeed(name) {
+  
+  if (user) {
+  var user = firebase.auth().currentUser;
+  var name, email, photoUrl, uid;
+
+  if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                     // this value to authenticate with your backend server, if
+                     // you have one. Use User.getToken() instead.
+  }
+  
   console.log("Attempting test whether this name already exists...");
   
   var newServerDocRef = db.collection("users").doc(uid).collection("mc-server-feed").doc(name);
