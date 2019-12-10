@@ -75,6 +75,21 @@ if (user) {
 
 function CreateFeed(name) {
   
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAN4nLKenddvEzcSZYhaJ-s19Irv9PEdyA",
+    authDomain: "telepathic-squid-000.firebaseapp.com",
+    databaseURL: "https://telepathic-squid-000.firebaseio.com",
+    projectId: "telepathic-squid-000",
+    storageBucket: "telepathic-squid-000.appspot.com",
+    messagingSenderId: "216289155289",
+    appId: "1:216289155289:web:c4d915b3c17c08a5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  var db = firebase.firestore();
+  
   if (user) {
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid;
