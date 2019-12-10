@@ -83,7 +83,7 @@ function CreateFeed(name) {
 
   var newServerDocRef = db.collection("users").doc(uid).collection("mc-server-feed").doc(name);
 
-  feedBaseDocumentRef.get().then(function(doc) {
+  newServerDocRef.get().then(function(doc) {
       if (doc.exists) {
         console.log("This feed already exists.");
       } else {
