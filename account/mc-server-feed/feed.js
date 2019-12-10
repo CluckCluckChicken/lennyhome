@@ -115,4 +115,6 @@ function CreateFeed(name) {
           console.log("Hit F5 to retry.");
       });
   }
+  else {
+    console.log("user -> null");
 }
