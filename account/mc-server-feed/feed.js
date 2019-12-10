@@ -15,8 +15,6 @@ var db = firebase.firestore();
 
 firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
-  
-  console.log("ello");
   var user = firebase.auth().currentUser;
   var name, email, photoUrl, uid;
 
@@ -31,7 +29,7 @@ if (user) {
 
   // Change username options
 
-  console.log("You are logged in as: " + name + ". To change your username, type the following into the console:");
+  console.log("You are logged in as: " + name + ". Your UID is: " + uid + ". To change your username, type the following into the console:");
   console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
   console.log("Ignore him. He's grumpy.");
 
