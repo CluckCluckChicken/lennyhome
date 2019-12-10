@@ -117,4 +117,5 @@ function CreateFeed(name) {
   }
   else {
     console.log("user -> null");
+  }
 }
