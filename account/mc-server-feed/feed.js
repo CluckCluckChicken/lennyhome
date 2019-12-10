@@ -76,6 +76,9 @@ if (user) {
 });
 
 function CreateFeed(name) {    
+  
+  var feedBaseDocumentRef = db.collection("users").doc(uid).collection("mc-server-feed").doc("%base");
+  
   console.log("Attempting test whether this name already exists...");
 
   var newServerDocRef = db.collection("users").doc(uid).collection("mc-server-feed").doc(name);
