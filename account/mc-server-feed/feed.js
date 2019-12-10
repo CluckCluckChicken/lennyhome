@@ -14,6 +14,8 @@ function CreateFeed(name) {
           })
           .then(function() {
               console.log("Done!");
+              console.log("Hit F5 to see it!");
+              alert("Hit F5 to see your new server!");
           })
           .catch(function(error) {
               console.error("Error writing new feed document: ", error);
