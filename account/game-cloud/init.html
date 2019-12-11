@@ -121,11 +121,16 @@
         console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
         console.log("Ignore him. He's grumpy.");
         
+        console.log("Checking if Game Cloud has been initialized...");
         firebase.database().ref(`users/${userId}/friends`).once("value", snapshot => {
            if (!snapshot.exists()){
+              console.log("No. Initializing now.");
               firebase.database().ref('users/' + uid + "/friends").set({
                 %base: "base"
               });
+            }
+            else {
+              console.log("Already initialized. Redirecting...");
             }
         });
                
