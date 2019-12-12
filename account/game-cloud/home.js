@@ -52,7 +52,7 @@ if (user) {
             NotificationsArray.push(childData); 
         });
         console.log(NotificationsArray);
-        document.getElementById("FriendsList").innerHTML = NotificationsValuesArray;
+        document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
       });
     }
     else {
