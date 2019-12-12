@@ -49,8 +49,8 @@ if (user) {
           } else {
             window.location = "./home.html";
           }
-        firebase.database().ref('users/' + uid + "/game-cloud").push({from: "system", content: "your account woz created"});
       });
+      firebase.database().ref('users/' + uid + "/game-cloud").push({from: "system", content: "your account woz created"});
     }
   });
 
