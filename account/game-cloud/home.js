@@ -53,7 +53,7 @@ if (user) {
             
             NotificationsArray.push(childData[0]);
         });
-        console.log(NotificationsArray.values);
+        console.log(Object.values(NotificationsArray));
         //document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
       });
     }
