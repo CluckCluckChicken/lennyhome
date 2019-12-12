@@ -37,7 +37,10 @@ if (user) {
    if (snapshot.exists()){
       console.log("Game Cloud is already initialized. Good.");
      
-      document.write( firebase.database().ref('/users/' + uid + "/game-cloud/friends").once('value'));
+      return firebase.database().ref('/users/' + uid + "/game-cloud/friends").once('value').then(function(snapshot) {
+        console.log(snapshot.val());
+      });
+
     }
     else {
       window.location = "./init.html";
