@@ -27,6 +27,8 @@ if (user) {
                      // you have one. Use User.getToken() instead.
   }
 
+  var FriendsArray = new Array();
+  
   // Change username options
 
   console.log("You are logged in as: " + name + ". To change your username, type the following into the console:");
@@ -46,8 +48,9 @@ if (user) {
             
             var childData = childSnapshot.val();
             
-            console.log(key);
+            FriendsArray.push(key); 
         });
+        console.log(FriendsArray);
       });
 
     }
