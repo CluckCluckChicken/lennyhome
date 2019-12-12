@@ -48,7 +48,7 @@ if (user) {
             
             var childData = childSnapshot.val();
             
-            FriendsArray.push(key); 
+            FriendsArray.push(childData); 
         });
         document.getElementById("FriendsList").innerHTML = FriendsArray;
       });
