@@ -44,12 +44,12 @@
     </div>
     
     <div>
-      <div>Enter the user ID of the person that you want to friend. To get a user's user ID, go to their profile and click "Friend".</div>
+      <div>To friend a user, go to their profile and click "Friend".</div>
       <input type="text" id="AddFriendField"><button onclick="AddFriend(document.getElementById('AddFriendField').value);">Add friend</button>
+      <div>Friends:</div>
+      <div id="FriendsList"></div>
     </div>
-    
-    <div id="FriendsList"></div>
-    
+        
     <script>
       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
       function myFunction() {
