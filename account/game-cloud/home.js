@@ -28,6 +28,7 @@ if (user) {
   }
   
   var NotificationsArray = new Array();
+  var NotificationsKeysArray = new Array();
   var NotificationsValuesArray = new Array();
 
   // Change username options
@@ -50,8 +51,11 @@ if (user) {
             var childData = childSnapshot.val();
             
             NotificationsArray.push(childData); 
+            NotificationsKeysArray.push(NotificationsArray[0]);
+            NotificationsValuesArray.push(NotificationsArray[0]);
         });
-        console.log(NotificationsArray);
+        console.log(NotificationsKeysArray);
+        console.log(NotificationsValuesArray);
         document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
       });
     }
