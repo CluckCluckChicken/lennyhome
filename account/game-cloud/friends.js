@@ -50,7 +50,7 @@ if (user) {
             
             FriendsArray.push(key); 
         });
-        console.log(FriendsArray);
+        document.getElementById("FriendsList").innerHTML = FriendsArray;
       });
 
     }
