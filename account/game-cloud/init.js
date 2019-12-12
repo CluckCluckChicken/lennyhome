@@ -41,7 +41,8 @@ if (user) {
     else {
       console.log("Game Cloud isn't initialized, so it will be now.");
       firebase.database().ref('users/' + uid + "/game-cloud").set({
-        friends: {someone: "hello"}
+        friends: {someone: "hello"},
+        notifications: {from: "system", content: "your account woz created"}
       }, function(error) {
           if (error) {
             console.log("Error: " + error + ". Retrying...");
@@ -50,7 +51,6 @@ if (user) {
             window.location = "./home.html";
           }
       });
-      firebase.database().ref('users/' + uid + "/game-cloud").push({from: "system", content: "your account woz created"});
     }
   });
 
