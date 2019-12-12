@@ -26,6 +26,9 @@ if (user) {
                      // this value to authenticate with your backend server, if
                      // you have one. Use User.getToken() instead.
   }
+  
+  var NotificationsArray;
+  var NotificationsValuesArray;
 
   // Change username options
 
@@ -36,6 +39,21 @@ if (user) {
   firebase.database().ref(`users/${uid}/game-cloud`).once("value", snapshot => {
    if (snapshot.exists()){
       console.log("Game Cloud is already initialized. Good.");
+     
+      var query = firebase.database().ref('/users/' + window.uid + "/game-cloud/notifications").orderByKey();
+      query.once("value")
+        .then(function(snapshot) {
+          snapshot.forEach(function(childSnapshot) {
+            
+            var key = childSnapshot.key;
+            
+            var childData = childSnapshot.val();
+            
+            NotificationsArray.push(childData); 
+        });
+        console.log(NotificationsArray);
+        document.getElementById("FriendsList").innerHTML = NotificationsValuesArray;
+      });
     }
     else {
       window.location = "./init.html";
