@@ -63,3 +63,11 @@ if (user) {
   window.location = "../index.html";
 }
 });
+
+
+function AddFriend(uid) {
+  var ref = firebase.database().ref('/users/' + uid + "/game-cloud/friends")
+  ref.push({
+    uid
+  });
+}
