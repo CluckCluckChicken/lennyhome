@@ -39,7 +39,7 @@ if (user) {
       window.location = "./home.html";
     }
     else {
-      console.log("Game Cloud is already initialized, so it will be now.");
+      console.log("Game Cloud isn't initialized, so it will be now.");
       firebase.database().ref('users/' + uid + "/game-cloud").set({
         friends: {someone: "hello"},
       }, function(error) {
