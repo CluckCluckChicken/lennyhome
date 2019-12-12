@@ -22,7 +22,7 @@ if (user) {
     name = user.displayName;
     email = user.email;
     photoUrl = user.photoURL;
-    uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+    window.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
                      // this value to authenticate with your backend server, if
                      // you have one. Use User.getToken() instead.
   }
@@ -36,7 +36,7 @@ if (user) {
   console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
   console.log("Ignore him. He's grumpy.");
   
-  firebase.database().ref(`users/${uid}/game-cloud`).once("value", snapshot => {
+  firebase.database().ref(`users/${window.uid}/game-cloud`).once("value", snapshot => {
    if (snapshot.exists()){
       console.log("Game Cloud is already initialized. Good.");
      
