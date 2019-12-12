@@ -28,6 +28,7 @@ if (user) {
   }
   
   var NotificationsArray = new Array();
+  var NotificationsJSONArray = new Array();
   var NotificationsSendersArray = new Array();
   var NotificationsValuesArray = new Array();
 
@@ -51,11 +52,9 @@ if (user) {
             var childData = childSnapshot.val();
             
             NotificationsArray.push(childData); 
-            NotificationsSendersArray.push(NotificationsArray[1]);
-            NotificationsValuesArray.push(NotificationsArray[0]);
+            NotificationsJSONArray.push(NotificationsArray[0]);
         });
-        console.log(NotificationsSendersArray);
-        console.log(NotificationsValuesArray);
+        console.log(NotificationsJSONArray);
         //document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
       });
     }
