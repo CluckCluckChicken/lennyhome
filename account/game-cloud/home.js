@@ -56,7 +56,7 @@ if (user) {
         });
         console.log(NotificationsSendersArray);
         console.log(NotificationsValuesArray);
-        document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
+        //document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
       });
     }
     else {
