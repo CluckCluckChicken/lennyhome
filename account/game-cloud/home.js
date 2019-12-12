@@ -51,9 +51,10 @@ if (user) {
             
             var childData = childSnapshot.val();
             
-            NotificationsArray.push(childData[0]);
+            NotificationsArray.push(childData); 
+            NotificationsJSONArray.push(NotificationsArray[0]);
         });
-        console.log(Object.values(NotificationsArray[0]));
+        console.log(NotificationsArray)
         //document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
       });
     }
