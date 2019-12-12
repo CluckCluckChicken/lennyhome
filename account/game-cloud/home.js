@@ -51,8 +51,8 @@ if (user) {
             var childData = childSnapshot.val();
             
             NotificationsArray.push(childData); 
-            NotificationsKeysArray.push(NotificationsArray[0]);
-            NotificationsValuesArray.push(NotificationsArray[0]);
+            NotificationsKeysArray.push(NotificationsArray[0][0]);
+            NotificationsValuesArray.push(NotificationsArray[0][0]);
         });
         console.log(NotificationsKeysArray);
         console.log(NotificationsValuesArray);
