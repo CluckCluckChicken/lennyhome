@@ -51,7 +51,7 @@ if (user) {
             NotificationsArray.push(childData); 
         });
         for (var i = 0; i < NotificationsArray.length; i++) {
-            console.log(NotificationsArray[i]);
+            console.log(NotificationsArray[i].from);
         }
         //document.getElementById("UpdatesList").innerHTML = NotificationsValuesArray;
       });
