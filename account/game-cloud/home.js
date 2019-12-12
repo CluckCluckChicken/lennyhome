@@ -27,8 +27,8 @@ if (user) {
                      // you have one. Use User.getToken() instead.
   }
   
-  var NotificationsArray;
-  var NotificationsValuesArray;
+  var NotificationsArray = new Array();
+  var NotificationsValuesArray = new Array();
 
   // Change username options
 
