@@ -45,7 +45,7 @@ if (user) {
       }, function(error) {
           if (error) {
             console.log("Error: " + error + ". Retrying...");
-            //window.location.reload(true);
+            window.location.reload(true);
           } else {
             //window.location = "./home.html";
           }
@@ -55,6 +55,6 @@ if (user) {
   });
 
 } else {
-  window.location = "../index.html";
+  //window.location = "../index.html";
 }
 });
