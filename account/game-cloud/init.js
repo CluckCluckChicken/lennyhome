@@ -36,7 +36,7 @@ if (user) {
   firebase.database().ref(`users/${uid}/game-cloud`).once("value", snapshot => {
    if (snapshot.exists()){
       console.log("Game Cloud is already initialized. Redirecting...");
-      window.location = "./home.html";
+      //window.location = "./home.html";
     }
     else {
       console.log("Game Cloud is already initialized, so it will be now.");
@@ -55,6 +55,6 @@ if (user) {
   });
 
 } else {
-  //window.location = "../index.html";
+  window.location = "../index.html";
 }
 });
