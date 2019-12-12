@@ -67,7 +67,5 @@ if (user) {
 
 function AddFriend(userToAdd) {
   var ref = firebase.database().ref('/users/' + window.uid + "/game-cloud/friends")
-  ref.push({
-    userId: userToAdd
-  });
+  ref.push(userToAdd);
 }
