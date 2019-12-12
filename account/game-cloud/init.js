@@ -33,14 +33,14 @@ if (user) {
   console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
   console.log("Ignore him. He's grumpy.");
   
-  firebase.database().ref(`users/${userId}/game-cloud`).once("value", snapshot => {
+  firebase.database().ref(`users/${uid}/game-cloud`).once("value", snapshot => {
    if (snapshot.exists()){
       console.log("Game Cloud is already initialized. Redirecting...");
       window.location = "./home.html";
     }
     else {
       console.log("Game Cloud is already initialized, so it will be now.");
-      firebase.database().ref('users/' + userId + "/game-cloud").set({
+      firebase.database().ref('users/' + uid + "/game-cloud").set({
         friends: {someone: "hello"},
       }, function(error) {
           if (error) {
