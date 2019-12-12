@@ -45,9 +45,9 @@ if (user) {
       }, function(error) {
           if (error) {
             console.log("Error: " + error + ". Retrying...");
-            window.location.reload(true);
+            //window.location.reload(true);
           } else {
-            window.location = "./home.html";
+            //window.location = "./home.html";
           }
 
       });
