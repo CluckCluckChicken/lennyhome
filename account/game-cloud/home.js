@@ -53,7 +53,7 @@ if (user) {
         for (var i = 0; i < NotificationsArray.length; i++) {
           console.log(NotificationsArray[i].from);
           console.log(NotificationsArray[i].content);
-          document.getElementById("UpdatesList").innerHTML = "-----------------------<br/>" + NotificationsArray[i].from + "&colon;<br/>" + NotificationsArray[i].content + "<br/>-----------------------";
+          document.getElementById("UpdatesList").innerHTML += "-----------------------<br/>" + NotificationsArray[i].from + "&colon;<br/>" + NotificationsArray[i].content + "<br/>-----------------------";
         }
       });
     }
