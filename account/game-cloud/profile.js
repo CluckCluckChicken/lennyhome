@@ -42,6 +42,15 @@ if (user) {
         .then(function(snapshot) {
           document.getElementById("Username").innerHTML = snapshot.val().username;
       });
+      if (window.location.hash == "" || window.location.hash == "#") {
+        document.getElementById("ProfileContent").style.display = "none";
+        document.getElementById("ProfileContent").style.display = "inline-block";
+        document.getElementById("OwnProfileUrl").innerHTML = "#" + window.uid;
+      }
+      else {
+        document.getElementById("ProfileContent").style.display = "inline-block";
+        document.getElementById("ProfileContent").style.display = "none";
+      }
     }
     else {
       window.location = "./init.html";
