@@ -46,6 +46,14 @@
     <center>
       <h3 id="Username"></h3>
       <button id="FriendButton" onclick="AddFriend(window.location.hash.substring(1))">Friend</button>
+      <script>
+        if (window.location.hash == null) {
+          document.getElementById("FriendButton").style.display = "none";
+        }
+        else {
+          document.getElementById("FriendButton").style.display = "inline-block";
+        }
+      </script>
     </center>
     
     <script>
