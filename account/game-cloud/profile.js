@@ -44,12 +44,12 @@ if (user) {
       });
       if (window.location.hash == "" || window.location.hash == "#") {
         document.getElementById("ProfileContent").style.display = "none";
-        document.getElementById("ProfileContent").style.display = "inline-block";
+        document.getElementById("ProfileInstructions").style.display = "inline-block";
         document.getElementById("OwnProfileUrl").innerHTML = "#" + window.uid;
       }
       else {
         document.getElementById("ProfileContent").style.display = "inline-block";
-        document.getElementById("ProfileContent").style.display = "none";
+        document.getElementById("ProfileInstructions").style.display = "none";
       }
     }
     else {
