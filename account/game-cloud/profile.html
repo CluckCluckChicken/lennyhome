@@ -54,17 +54,6 @@
         <h4>To see your own profile, enter the following to the end of the URL:</h4>
         <h4 id="OwnProfileUrl"></h4>
       </div>
-      <script>
-        if (window.location.hash == "" || window.location.hash == "#") {
-          document.getElementById("ProfileContent").style.display = "none";
-          document.getElementById("ProfileContent").style.display = "inline-block";
-          document.getElementById("OwnProfileUrl").innerHTML = "#" + window.uid;
-        }
-        else {
-          document.getElementById("ProfileContent").style.display = "inline-block";
-          document.getElementById("ProfileContent").style.display = "none";
-        }
-      </script>
     </center>
     
     <script>
