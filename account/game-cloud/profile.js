@@ -52,3 +52,10 @@ if (user) {
   window.location = "../index.html";
 }
 });
+
+function AddFriend(userToAdd) {
+  var ref = firebase.database().ref('/users/' + window.uid + "/game-cloud/friends")
+  ref.push(userToAdd);
+  console.log("Attempted to add new friend. Will reload.");
+  window.location.reload(true);
+}
