@@ -42,7 +42,7 @@ if (user) {
       console.log("Game Cloud isn't initialized, so it will be now.");
       firebase.database().ref('users/' + uid + "/game-cloud").set({
         notifications: {welcomeNotification: {from: "system", content: "your account woz created"}},
-        profile: {username: uid}
+        profile: {username: name, userId: uid}
       }, function(error) {
           if (error) {
             console.log("Error: " + error + ". Retrying...");
