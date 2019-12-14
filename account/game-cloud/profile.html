@@ -48,12 +48,21 @@
         <h3 id="Username"></h3>
         <button onclick="AddFriend(window.location.hash.substring(1))">Friend</button>
       </div>
+      <div id="ProfileInstructions">
+        <h3>Profiles</h3>
+        <h4>To see someone's profile, enter "#<their userId>" (without the quotes) after the URL, the press F5.</h4>
+        <h4>To see your own profile, enter the following to the end of the URL:</h4>
+        <h4 id="OwnProfileUrl"></h4>
+      </div>
       <script>
         if (window.location.hash == "" || window.location.hash == "#") {
           document.getElementById("ProfileContent").style.display = "none";
+          document.getElementById("ProfileContent").style.display = "inline-block";
+          document.getElementById("OwnProfileUrl").innerHTML = "#" + window.uid;
         }
         else {
           document.getElementById("ProfileContent").style.display = "inline-block";
+          document.getElementById("ProfileContent").style.display = "none";
         }
       </script>
     </center>
