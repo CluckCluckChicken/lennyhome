@@ -58,9 +58,9 @@ function AddFriend(userToAdd) {
   ref.push(userToAdd);
   ref = firebase.database().ref("/users/" + userToAdd + "/game-cloud/notifications");
   ref.push({
-    from: window.uid,
-    content: "You were friended by " + window.name
+    from: userToAdd,
+    content: userToAdd + " friended you."
   });
   console.log("Attempted to add new friend. Will reload.");
-  window.location.reload(true);
+  //window.location.reload(true);
 }
