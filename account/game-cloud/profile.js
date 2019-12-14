@@ -37,7 +37,7 @@ if (user) {
    if (snapshot.exists()){
       console.log("Game Cloud is already initialized. Good.");
      
-      var query = firebase.database().ref('/users/' + window.uid + "/game-cloud/profile").orderByKey();
+      var query = firebase.database().ref('/users/' + window.location.hash.substring(1); + "/game-cloud/profile").orderByKey();
       query.once("value")
         .then(function(snapshot) {
           document.getElementById("Username").innerHTML = snapshot.val().username;
