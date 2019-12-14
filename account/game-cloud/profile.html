@@ -44,14 +44,16 @@
     </div>
     
     <center>
-      <h3 id="Username"></h3>
-      <button id="FriendButton" onclick="AddFriend(window.location.hash.substring(1))">Friend</button>
+      <div id="ProfileContent">
+        <h3 id="Username"></h3>
+        <button onclick="AddFriend(window.location.hash.substring(1))">Friend</button>
+      </div>
       <script>
         if (window.location.hash == "" || window.location.hash == "#") {
-          document.getElementById("FriendButton").style.display = "none";
+          document.getElementById("ProfileContent").style.display = "none";
         }
         else {
-          document.getElementById("FriendButton").style.display = "inline-block";
+          document.getElementById("ProfileContent").style.display = "inline-block";
         }
       </script>
     </center>
