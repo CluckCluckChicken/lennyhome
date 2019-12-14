@@ -20,9 +20,6 @@ var storage = firebase.storage();
 var storageRef = storage.ref();
 
 var thumbnailsRef = storageRef.child('UserThumbnails');
-var userThumbnailRef = thumbnailsRef.child('images/' + uuid4() + '.jpg');
-
-console.log(uuid4());
 
 firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
