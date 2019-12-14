@@ -19,7 +19,7 @@ if (user) {
   var user = firebase.auth().currentUser;
   var name, email, photoUrl, uid;
   if (user != null) {
-    name = user.displayName;
+    window.name = user.displayName;
     email = user.email;
     photoUrl = user.photoURL;
     window.uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
@@ -64,10 +64,14 @@ if (user) {
 }
 });
 
-
 function AddFriend(userToAdd) {
-  var ref = firebase.database().ref('/users/' + window.uid + "/game-cloud/friends")
+  var ref = firebase.database().ref('/users/' + window.uid + "/game-cloud/friends");
   ref.push(userToAdd);
+  ref = firebase.database().ref("/users/" + userToAdd + "/game-cloud/notifications");
+  ref.push({
+    from: window.uid,
+    content: "You were friended by " + window.name
+  });
   console.log("Attempted to add new friend. Will reload.");
   window.location.reload(true);
 }
