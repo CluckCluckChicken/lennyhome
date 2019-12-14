@@ -40,6 +40,7 @@ if (user) {
       var query = firebase.database().ref('/users/' + window.uid + "/game-cloud/profile/username").orderByKey();
       query.once("value")
         .then(function(snapshot) {
+          console.log(snapshot.val);
           document.getElementById("Username").innerHTML = snapshot.val;
       });
     }
