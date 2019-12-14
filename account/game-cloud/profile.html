@@ -47,7 +47,7 @@
       <h3 id="Username"></h3>
       <button id="FriendButton" onclick="AddFriend(window.location.hash.substring(1))">Friend</button>
       <script>
-        if (window.location.hash == null) {
+        if (window.location.hash == "" || window.location.hash == "#") {
           document.getElementById("FriendButton").style.display = "none";
         }
         else {
