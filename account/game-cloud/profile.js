@@ -13,14 +13,6 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
-// Get a reference to the storage service, which is used to create references in your storage bucket
-var storage = firebase.storage();
-
-// Create a storage reference from our storage service
-var storageRef = storage.ref();
-
-var thumbnailsRef = storageRef.child('UserThumbnails');
-
 firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
 
