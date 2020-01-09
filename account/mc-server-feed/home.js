@@ -92,6 +92,8 @@ function CreateFeed(name) {
           console.log("Name is valid. Creating feed entries...");
           db.collection("users").doc(uid).collection("mc-server-feed").doc(name).set({
             isServer: true,
+            edition: document.getElementById("newServerEdition").value,
+            publicity: document.getElementById("newServerPublicity").value
           })
           .then(function() {
               console.log("Done!");
