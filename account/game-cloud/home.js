@@ -66,3 +66,8 @@ if (user) {
   window.location = "../index.html";
 }
 });
+
+function ClearUpdates() {
+    let notificationsRef = this.database.ref('/users/' + window.uid + "/game-cloud/notifications");
+    notificationsRef.remove()
+}
