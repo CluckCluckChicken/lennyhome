@@ -40,8 +40,19 @@ if (user) {
       var query = firebase.database().ref('/users/' + window.location.hash.substring(1) + "/game-cloud/profile").orderByKey();
       query.once("value")
         .then(function(snapshot) {
+          var profileOwner = snapshot.val().username;
           document.getElementById("Username").innerHTML = snapshot.val().username;
       });
+     
+      var friendRef = firebase.database().ref('/users/' + window.location.hash.substring(1) + "/game-cloud/friends");
+      friendRef.orderByValue().limitToLast(3).on("value", function(snapshot) {
+         snapshot.forEach(function(data) {
+          if (data.val == profileOwner) {
+            document.getElementById("friendBtn").innerHTML = "Already friended";
+          }
+        });
+      });
+      
       if (window.location.hash == "" || window.location.hash == "#") {
         document.getElementById("ProfileContent").style.display = "none";
         document.getElementById("ProfileInstructions").style.display = "inline-block";
