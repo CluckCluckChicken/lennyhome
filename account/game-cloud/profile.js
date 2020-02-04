@@ -43,7 +43,7 @@ if (user) {
           document.getElementById("Username").innerHTML = snapshot.val().username;
       });
      
-      var friendRef = firebase.database().ref('/users/' + window.location.hash.substring(1) + "/game-cloud/friends");
+      var friendRef = firebase.database().ref('/users/' + window.uid + "/game-cloud/friends");
       friendRef.orderByValue().limitToLast(3).on("value", function(snapshot) {
          snapshot.forEach(function(data) {
           if (data.val == window.location.hash.substring(1)) {
