@@ -13,6 +13,8 @@ firebase.initializeApp(firebaseConfig);
 
 var db = firebase.firestore();
 
+firebase.auth().useDeviceLanguage();
+
 var name, email, photoUrl, uid;
 
 firebase.auth().onAuthStateChanged(function(user) {
