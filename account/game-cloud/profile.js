@@ -13,6 +13,8 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
+firebase.auth().useDeviceLanguage();
+
 firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
 
