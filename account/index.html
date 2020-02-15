@@ -71,6 +71,8 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       
+      firebase.auth().useDeviceLanguage();
+
       firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
       .then(function() {
         // Existing and future Auth states are now persisted in the current
