@@ -105,6 +105,7 @@
       
       var db = firebase.firestore();
       
+      firebase.auth().useDeviceLanguage();
       
       firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
