@@ -37,8 +37,8 @@ if (user) {
   console.log("var user = firebase.auth().currentUser; user.updateProfile({ displayName: '[PUT YOUR NEW USERNAME HERE. NO SLASHES, OR QUOTATION MARKS OF ANY KIND. IS THAT CLEAR? YES SIR!]', })");
   console.log("Ignore him. He's grumpy.");
 
-  var feedBaseDocumentRef = db.collection("users").doc(uid).collection("mc-server-feed").doc("%base");
-  var mcServerFeedRef = db.collection("/users/" + uid + "/mc-server-feed");
+  var feedBaseDocumentRef = db.collection("mc-server-feed").doc(uid).collection("servers").doc("default-server");
+  var mcServerFeedRef = db.collection("/mc-server-feed/" + uid + "/servers");
 
   feedBaseDocumentRef.get().then(function(doc) {
       if (doc.exists) {
@@ -48,7 +48,7 @@ if (user) {
           console.log("Fetching servers list...");
 
           // Create query to only show servers
-          var isServerQuery = mcServerFeedRef.where("isServer", "==", true);
+          var isServerQuery = mcServerFeedRef.get();
 
           isServerQuery.get()
           .then(function(querySnapshot) {
