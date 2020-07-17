@@ -47,10 +47,8 @@ if (user) {
 
           console.log("Fetching servers list...");
 
-          // Create query to only show servers
-          var isServerQuery = mcServerFeedRef.get();
-
-          isServerQuery.get()
+          
+          mcServerFeedRef.get()
           .then(function(querySnapshot) {
               querySnapshot.forEach(function(doc) {
                   // doc.data() is never undefined for query doc snapshots
